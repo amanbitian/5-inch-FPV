@@ -1,0 +1,410 @@
+# diff all defaults
+
+# version
+# Betaflight / STM32F411 (S411) 4.4.2 Jun  1 2023 / 02:20:34 (23d066d08) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name CRAZYBEEF4SX1280
+manufacturer_id HAMO
+mcu_id 005600293333510f32363532
+signature 
+
+# name: Mobula8
+
+# resources
+#resource LED_STRIP 1 A00
+resource LED_STRIP 1 NONE
+
+# dma
+#dma ADC 1 0
+## ADC 1: DMA2 Stream 0 Channel 0
+dma ADC 1 1
+# ADC 1: DMA2 Stream 4 Channel 0
+
+# feature
+feature -RX_SERIAL
+feature -SOFTSERIAL
+feature -TELEMETRY
+feature -AIRMODE
+#feature -RX_SPI
+#feature RX_SERIAL
+#feature SOFTSERIAL
+#feature TELEMETRY
+#feature AIRMODE
+feature RX_SPI
+
+# serial
+#serial 0 0 115200 57600 0 115200
+serial 0 0 115200 57600 0 2000000
+#serial 1 0 115200 57600 0 115200
+serial 1 2048 115200 57600 0 115200
+#beacon -RX_LOST
+
+# beacon
+beacon RX_LOST
+#beacon -RX_SET
+beacon RX_SET
+
+# aux
+#aux 0 0 0 900 900 0 0
+aux 0 0 0 1700 2100 0 0
+#aux 1 0 0 900 900 0 0
+aux 1 1 1 900 1300 0 0
+#aux 2 0 0 900 900 0 0
+aux 2 2 1 1300 1700 0 0
+#aux 3 0 0 900 900 0 0
+aux 3 13 2 1700 2100 0 0
+#aux 4 0 0 900 900 0 0
+aux 4 35 3 1700 2100 0 0
+
+# adjrange
+#adjrange 0 0 0 900 900 0 0 0 0
+adjrange 0 0 3 1500 2100 12 3 0 0
+#adjrange 1 0 0 900 900 0 0 0 0
+adjrange 1 0 3 900 1500 12 3 0 0
+#adjrange 2 0 0 900 900 0 0 0 0
+adjrange 2 0 1 1800 2100 12 1 0 0
+
+# vtxtable
+#vtxtable bands 0
+vtxtable bands 6
+#vtxtable channels 0
+vtxtable channels 8
+#vtxtable band 1 BAND1    1 CUSTOM 
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+#vtxtable band 2 BAND2    2 CUSTOM 
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+#vtxtable band 3 BAND3    3 CUSTOM 
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
+#vtxtable band 4 BAND4    4 CUSTOM 
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+#vtxtable band 5 BAND5    5 CUSTOM 
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+#vtxtable band 6 BAND6    6 CUSTOM 
+vtxtable band 6 LOWRACE  L FACTORY 5333 5373 5413 5453 5493 5533 5573 5613
+#vtxtable powerlevels 0
+vtxtable powerlevels 5
+#vtxtable powervalues 0 0 0 0 0 0 0 0
+vtxtable powervalues 10 2 14 20 26
+#vtxtable powerlabels LV0 LV1 LV2 LV3 LV4 LV5 LV6 LV7
+vtxtable powerlabels 0 RCE 25 100 400
+
+# master
+#set gyro_lpf1_static_hz = 250
+set gyro_lpf1_static_hz = 200
+#set gyro_lpf2_static_hz = 500
+set gyro_lpf2_static_hz = 250
+#set dyn_notch_q = 300
+set dyn_notch_q = 500
+#set dyn_notch_min_hz = 100
+set dyn_notch_min_hz = 150
+#set gyro_lpf1_dyn_min_hz = 250
+set gyro_lpf1_dyn_min_hz = 200
+#set gyro_lpf1_dyn_max_hz = 500
+set gyro_lpf1_dyn_max_hz = 550
+#set acc_lpf_hz = 25
+set acc_lpf_hz = 10
+#set acc_trim_pitch = 0
+set acc_trim_pitch = 1
+#set acc_calibration = 0,0,0,0
+set acc_calibration = 1,-38,27,1
+#set min_check = 1050
+set min_check = 1000
+#set rc_smoothing_auto_factor = 30
+set rc_smoothing_auto_factor = 25
+#set rc_smoothing_auto_factor_throttle = 30
+set rc_smoothing_auto_factor_throttle = 25
+#set serialrx_provider = CRSF
+set serialrx_provider = SPEK1024
+#set blackbox_sample_rate = 1/4
+set blackbox_sample_rate = 1/2
+#set dshot_idle_value = 550
+set dshot_idle_value = 800
+#set dshot_bidir = OFF
+set dshot_bidir = ON
+#set dshot_bitbang = OFF
+set dshot_bitbang = AUTO
+#set motor_pwm_protocol = DISABLED
+set motor_pwm_protocol = DSHOT300
+#set motor_poles = 14
+set motor_poles = 12
+#set failsafe_delay = 15
+set failsafe_delay = 4
+#set failsafe_recovery_delay = 10
+set failsafe_recovery_delay = 20
+#set vbat_max_cell_voltage = 430
+set vbat_max_cell_voltage = 450
+#set vbat_min_cell_voltage = 330
+set vbat_min_cell_voltage = 310
+#set vbat_warning_cell_voltage = 350
+set vbat_warning_cell_voltage = 320
+#set ibata_scale = 1175
+set ibata_scale = 470
+#set yaw_motors_reversed = OFF
+set yaw_motors_reversed = ON
+#set small_angle = 25
+set small_angle = 180
+#set gps_provider = UBLOX
+set gps_provider = NMEA
+#set gps_rescue_min_start_dist = 15
+set gps_rescue_min_start_dist = 30
+#set gps_rescue_ascend_rate = 750
+set gps_rescue_ascend_rate = 500
+#set gps_rescue_ground_speed = 750
+set gps_rescue_ground_speed = 2000
+#set gps_rescue_descent_dist = 20
+set gps_rescue_descent_dist = 200
+#set gps_rescue_descend_rate = 150
+set gps_rescue_descend_rate = 100
+#set gps_rescue_landing_alt = 4
+set gps_rescue_landing_alt = 5
+#set gps_rescue_throttle_max = 1700
+set gps_rescue_throttle_max = 1600
+#set gps_rescue_throttle_hover = 1275
+set gps_rescue_throttle_hover = 1280
+#set gps_rescue_sanity_checks = RESCUE_SANITY_FS_ONLY
+set gps_rescue_sanity_checks = RESCUE_SANITY_ON
+#set gps_rescue_throttle_p = 15
+set gps_rescue_throttle_p = 150
+#set gps_rescue_throttle_i = 15
+set gps_rescue_throttle_i = 20
+#set gps_rescue_throttle_d = 20
+set gps_rescue_throttle_d = 50
+#set gps_rescue_velocity_p = 8
+set gps_rescue_velocity_p = 80
+#set gps_rescue_velocity_i = 40
+set gps_rescue_velocity_i = 20
+#set gps_rescue_velocity_d = 12
+set gps_rescue_velocity_d = 15
+#set gps_rescue_yaw_p = 20
+set gps_rescue_yaw_p = 40
+#set deadband = 0
+set deadband = 1
+#set yaw_deadband = 0
+set yaw_deadband = 1
+#set pid_process_denom = 2
+set pid_process_denom = 4
+#set simplified_gyro_filter = ON
+set simplified_gyro_filter = OFF
+#set osd_rssi_pos = 234
+set osd_rssi_pos = 314
+#set osd_link_quality_pos = 234
+set osd_link_quality_pos = 2391
+#set osd_rssi_dbm_pos = 234
+set osd_rssi_dbm_pos = 2423
+#set osd_tim_2_pos = 234
+set osd_tim_2_pos = 2433
+#set osd_flymode_pos = 234
+set osd_flymode_pos = 2455
+#set osd_throttle_pos = 234
+set osd_throttle_pos = 2135
+#set osd_vtx_channel_pos = 234
+set osd_vtx_channel_pos = 2113
+#set osd_crosshairs_pos = 205
+set osd_crosshairs_pos = 2253
+#set osd_ah_sbar_pos = 206
+set osd_ah_sbar_pos = 2254
+#set osd_ah_pos = 78
+set osd_ah_pos = 2126
+#set osd_current_pos = 234
+set osd_current_pos = 2336
+#set osd_mah_drawn_pos = 234
+set osd_mah_drawn_pos = 2368
+#set osd_craft_name_pos = 234
+set osd_craft_name_pos = 394
+#set osd_pilot_name_pos = 234
+set osd_pilot_name_pos = 2443
+#set osd_warnings_pos = 14665
+set osd_warnings_pos = 2409
+#set osd_avg_cell_voltage_pos = 234
+set osd_avg_cell_voltage_pos = 2401
+#set osd_disarmed_pos = 234
+set osd_disarmed_pos = 2378
+#set osd_esc_rpm_pos = 234
+set osd_esc_rpm_pos = 161
+#set osd_core_temp_pos = 234
+set osd_core_temp_pos = 2359
+#set osd_canvas_width = 53
+set osd_canvas_width = 30
+#set osd_canvas_height = 20
+set osd_canvas_height = 13
+#set debug_mode = NONE
+set debug_mode = DUAL_GYRO_SCALED
+#set vtx_band = 0
+set vtx_band = 5
+#set vtx_channel = 0
+set vtx_channel = 1
+#set vtx_power = 0
+set vtx_power = 5
+#set vtx_low_power_disarm = OFF
+set vtx_low_power_disarm = ON
+#set vtx_freq = 0
+set vtx_freq = 5658
+#set pinio_box = 40,41,255,255
+set pinio_box = 255,255,255,255
+#set expresslrs_uid = 0,0,0,0,0,0
+set expresslrs_uid = 114,177,112,182,44,229
+#set expresslrs_rate_index = 0
+set expresslrs_rate_index = 1
+#set rpm_filter_min_hz = 100
+set rpm_filter_min_hz = 200
+#set craft_name = -
+set craft_name = Mobula8
+#set pilot_name = -
+set pilot_name = Pratap
+
+profile 0
+
+# profile 0
+#set dterm_lpf1_dyn_min_hz = 75
+set dterm_lpf1_dyn_min_hz = 60
+#set dterm_lpf1_dyn_max_hz = 150
+set dterm_lpf1_dyn_max_hz = 145
+#set dterm_lpf1_static_hz = 75
+set dterm_lpf1_static_hz = 150
+#set dterm_lpf2_static_hz = 150
+set dterm_lpf2_static_hz = 128
+#set vbat_sag_compensation = 0
+set vbat_sag_compensation = 100
+#set iterm_relax_cutoff = 15
+set iterm_relax_cutoff = 25
+#set yaw_lowpass_hz = 100
+set yaw_lowpass_hz = 0
+#set p_pitch = 47
+set p_pitch = 56
+#set i_pitch = 84
+set i_pitch = 100
+#set d_pitch = 46
+set d_pitch = 52
+#set f_pitch = 125
+set f_pitch = 149
+#set p_roll = 45
+set p_roll = 53
+#set i_roll = 80
+set i_roll = 95
+#set d_roll = 40
+set d_roll = 46
+#set f_roll = 120
+set f_roll = 143
+#set p_yaw = 45
+set p_yaw = 53
+#set i_yaw = 80
+set i_yaw = 95
+#set f_yaw = 120
+set f_yaw = 143
+#set d_min_roll = 30
+set d_min_roll = 43
+#set d_min_pitch = 34
+set d_min_pitch = 48
+#set d_max_advance = 20
+set d_max_advance = 0
+#set thrust_linear = 0
+set thrust_linear = 20
+#set feedforward_jitter_factor = 7
+set feedforward_jitter_factor = 5
+#set feedforward_boost = 15
+set feedforward_boost = 18
+#set feedforward_max_rate_limit = 90
+set feedforward_max_rate_limit = 95
+#set simplified_pids_mode = RPY
+set simplified_pids_mode = OFF
+#set simplified_master_multiplier = 100
+set simplified_master_multiplier = 120
+#set simplified_i_gain = 100
+set simplified_i_gain = 65
+#set simplified_d_gain = 100
+set simplified_d_gain = 120
+#set simplified_pi_gain = 100
+set simplified_pi_gain = 190
+#set simplified_dmax_gain = 100
+set simplified_dmax_gain = 20
+#set simplified_feedforward_gain = 100
+set simplified_feedforward_gain = 130
+#set simplified_pitch_d_gain = 100
+set simplified_pitch_d_gain = 85
+#set simplified_pitch_pi_gain = 100
+set simplified_pitch_pi_gain = 90
+#set simplified_dterm_filter = ON
+set simplified_dterm_filter = OFF
+#set tpa_mode = D
+set tpa_mode = PD
+#set tpa_breakpoint = 1350
+set tpa_breakpoint = 1250
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+#set roll_rc_rate = 7
+set roll_rc_rate = 4
+#set pitch_rc_rate = 7
+set pitch_rc_rate = 4
+#set yaw_rc_rate = 7
+set yaw_rc_rate = 5
+#set roll_srate = 67
+set roll_srate = 15
+#set pitch_srate = 67
+set pitch_srate = 15
+#set yaw_srate = 67
+set yaw_srate = 20
+
+rateprofile 1
+
+# rateprofile 1
+#set thr_mid = 50
+set thr_mid = 12
+#set thr_expo = 0
+set thr_expo = 20
+#set roll_srate = 67
+set roll_srate = 48
+#set pitch_srate = 67
+set pitch_srate = 48
+#set yaw_srate = 67
+set yaw_srate = 48
+
+rateprofile 2
+
+# rateprofile 2
+#set rates_type = ACTUAL
+set rates_type = BETAFLIGHT
+#set roll_rc_rate = 7
+set roll_rc_rate = 106
+#set pitch_rc_rate = 7
+set pitch_rc_rate = 106
+#set yaw_rc_rate = 7
+set yaw_rc_rate = 106
+#set roll_expo = 0
+set roll_expo = 15
+#set pitch_expo = 0
+set pitch_expo = 15
+#set yaw_expo = 0
+set yaw_expo = 5
+#set roll_srate = 67
+set roll_srate = 56
+#set pitch_srate = 67
+set pitch_srate = 56
+#set yaw_srate = 67
+set yaw_srate = 56
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save

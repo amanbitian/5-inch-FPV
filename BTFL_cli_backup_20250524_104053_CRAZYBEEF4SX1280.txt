@@ -1,0 +1,460 @@
+# diff all defaults
+
+# version
+# Betaflight / STM32F411 (S411) 4.4.0 Jan 28 2023 / 23:33:31 (4605309) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name CRAZYBEEF4SX1280
+manufacturer_id HAMO
+mcu_id 002c00593034511032373331
+signature 
+
+# resources
+#resource BEEPER 1 NONE
+resource BEEPER 1 C15
+#resource MOTOR 1 NONE
+resource MOTOR 1 B10
+#resource MOTOR 2 NONE
+resource MOTOR 2 B06
+#resource MOTOR 3 NONE
+resource MOTOR 3 B07
+#resource MOTOR 4 NONE
+resource MOTOR 4 B08
+#resource PPM 1 NONE
+resource PPM 1 A03
+#resource PWM 1 NONE
+resource PWM 1 A02
+#resource PWM 2 NONE
+resource PWM 2 A09
+#resource PWM 3 NONE
+resource PWM 3 A10
+#resource SERIAL_TX 1 NONE
+resource SERIAL_TX 1 A09
+#resource SERIAL_TX 2 NONE
+resource SERIAL_TX 2 A02
+#resource SERIAL_RX 1 NONE
+resource SERIAL_RX 1 A10
+#resource SERIAL_RX 2 NONE
+resource SERIAL_RX 2 A03
+#resource LED 1 NONE
+resource LED 1 C13
+#resource SPI_SCK 1 NONE
+resource SPI_SCK 1 A05
+#resource SPI_SCK 2 NONE
+resource SPI_SCK 2 B13
+#resource SPI_SCK 3 NONE
+resource SPI_SCK 3 B03
+#resource SPI_MISO 1 NONE
+resource SPI_MISO 1 A06
+#resource SPI_MISO 2 NONE
+resource SPI_MISO 2 B14
+#resource SPI_MISO 3 NONE
+resource SPI_MISO 3 B04
+#resource SPI_MOSI 1 NONE
+resource SPI_MOSI 1 A07
+#resource SPI_MOSI 2 NONE
+resource SPI_MOSI 2 B15
+#resource SPI_MOSI 3 NONE
+resource SPI_MOSI 3 B05
+#resource ADC_BATT 1 NONE
+resource ADC_BATT 1 B00
+#resource ADC_CURR 1 NONE
+resource ADC_CURR 1 B01
+#resource FLASH_CS 1 NONE
+resource FLASH_CS 1 A14
+#resource OSD_CS 1 NONE
+resource OSD_CS 1 B12
+#resource RX_SPI_CS 1 NONE
+resource RX_SPI_CS 1 A15
+#resource RX_SPI_EXTI 1 NONE
+resource RX_SPI_EXTI 1 C14
+#resource RX_SPI_BIND 1 NONE
+resource RX_SPI_BIND 1 B02
+#resource RX_SPI_LED 1 NONE
+resource RX_SPI_LED 1 B09
+#resource RX_SPI_EXPRESSLRS_RESET 1 NONE
+resource RX_SPI_EXPRESSLRS_RESET 1 A08
+#resource RX_SPI_EXPRESSLRS_BUSY 1 NONE
+resource RX_SPI_EXPRESSLRS_BUSY 1 A13
+#resource GYRO_EXTI 1 NONE
+resource GYRO_EXTI 1 A01
+#resource GYRO_CS 1 NONE
+resource GYRO_CS 1 A04
+
+# timer
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
+timer B10 AF1
+# pin B10: TIM2 CH3 (AF1)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+timer B08 AF2
+# pin B08: TIM4 CH3 (AF2)
+timer A00 AF2
+# pin A00: TIM5 CH1 (AF2)
+timer A02 AF3
+# pin A02: TIM9 CH1 (AF3)
+timer A09 AF1
+# pin A09: TIM1 CH2 (AF1)
+timer A10 AF1
+# pin A10: TIM1 CH3 (AF1)
+
+# dma
+#dma ADC 1 NONE
+dma ADC 1 0
+# ADC 1: DMA2 Stream 0 Channel 0
+#dma pin B10 NONE
+dma pin B10 0
+# pin B10: DMA1 Stream 1 Channel 3
+#dma pin B06 NONE
+dma pin B06 0
+# pin B06: DMA1 Stream 0 Channel 2
+#dma pin B07 NONE
+dma pin B07 0
+# pin B07: DMA1 Stream 3 Channel 2
+#dma pin B08 NONE
+dma pin B08 0
+# pin B08: DMA1 Stream 7 Channel 2
+#dma pin A00 NONE
+dma pin A00 0
+# pin A00: DMA1 Stream 2 Channel 6
+#dma pin A09 NONE
+dma pin A09 0
+# pin A09: DMA2 Stream 6 Channel 0
+#dma pin A10 NONE
+dma pin A10 0
+# pin A10: DMA2 Stream 6 Channel 0
+
+# feature
+feature -RX_SERIAL
+#feature -TELEMETRY
+#feature -OSD
+#feature -RX_SPI
+#feature RX_SERIAL
+feature TELEMETRY
+feature OSD
+feature RX_SPI
+
+# serial
+#serial 1 0 115200 57600 0 115200
+serial 1 2048 115200 57600 0 115200
+
+# aux
+#aux 0 0 0 900 900 0 0
+aux 0 0 0 1575 2100 0 0
+#aux 1 0 0 900 900 0 0
+aux 1 1 1 900 1300 0 0
+#aux 2 0 0 900 900 0 0
+aux 2 2 1 1300 1700 0 0
+#aux 3 0 0 900 900 0 0
+aux 3 13 2 1625 2100 0 0
+#aux 4 0 0 900 900 0 0
+aux 4 35 3 1300 2100 0 0
+
+# vtxtable
+#vtxtable bands 0
+vtxtable bands 6
+#vtxtable channels 0
+vtxtable channels 8
+#vtxtable band 1 BAND1    1 CUSTOM 
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+#vtxtable band 2 BAND2    2 CUSTOM 
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+#vtxtable band 3 BAND3    3 CUSTOM 
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665    0 5885 5905    0    0
+#vtxtable band 4 BAND4    4 CUSTOM 
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+#vtxtable band 5 BAND5    5 CUSTOM 
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+#vtxtable band 6 BAND6    6 CUSTOM 
+vtxtable band 6 LOWRACE  L CUSTOM  5333 5373 5413 5453 5493 5533 5573 5613
+#vtxtable powerlevels 0
+vtxtable powerlevels 5
+#vtxtable powervalues 0 0 0 0 0 0 0 0
+vtxtable powervalues 10 2 14 20 26
+#vtxtable powerlabels LV0 LV1 LV2 LV3 LV4 LV5 LV6 LV7
+vtxtable powerlabels 0 RCE 25 100 400
+
+# master
+#set acc_calibration = 0,0,0,0
+set acc_calibration = 44,-9,-26,1
+#set mag_hardware = AUTO
+set mag_hardware = NONE
+#set baro_hardware = AUTO
+set baro_hardware = NONE
+#set serialrx_provider = SPEK1024
+set serialrx_provider = CRSF
+#set rx_spi_bus = 0
+set rx_spi_bus = 3
+#set blackbox_device = SERIAL
+set blackbox_device = SPIFLASH
+#set dshot_idle_value = 550
+set dshot_idle_value = 1000
+#set dshot_burst = OFF
+set dshot_burst = AUTO
+#set dshot_bitbang = AUTO
+set dshot_bitbang = OFF
+#set motor_pwm_protocol = DISABLED
+set motor_pwm_protocol = DSHOT300
+#set failsafe_recovery_delay = 10
+set failsafe_recovery_delay = 5
+#set current_meter = VIRTUAL
+set current_meter = ADC
+#set battery_meter = NONE
+set battery_meter = ADC
+#set ibata_scale = 400
+set ibata_scale = 1175
+#set beeper_inversion = OFF
+set beeper_inversion = ON
+#set beeper_od = ON
+set beeper_od = OFF
+#set pid_process_denom = 2
+set pid_process_denom = 16
+#set osd_warn_bitmask = 8191
+set osd_warn_bitmask = 270335
+#set osd_vbat_pos = 234
+set osd_vbat_pos = 341
+#set osd_rssi_pos = 234
+set osd_rssi_pos = 341
+#set osd_link_quality_pos = 234
+set osd_link_quality_pos = 341
+#set osd_link_tx_power_pos = 234
+set osd_link_tx_power_pos = 341
+#set osd_rssi_dbm_pos = 234
+set osd_rssi_dbm_pos = 341
+#set osd_rsnr_pos = 234
+set osd_rsnr_pos = 341
+#set osd_tim_1_pos = 234
+set osd_tim_1_pos = 341
+#set osd_tim_2_pos = 234
+set osd_tim_2_pos = 341
+#set osd_remaining_time_estimate_pos = 234
+set osd_remaining_time_estimate_pos = 341
+#set osd_flymode_pos = 234
+set osd_flymode_pos = 341
+#set osd_anti_gravity_pos = 234
+set osd_anti_gravity_pos = 341
+#set osd_g_force_pos = 234
+set osd_g_force_pos = 341
+#set osd_throttle_pos = 234
+set osd_throttle_pos = 341
+#set osd_vtx_channel_pos = 234
+set osd_vtx_channel_pos = 341
+#set osd_crosshairs_pos = 205
+set osd_crosshairs_pos = 312
+#set osd_ah_sbar_pos = 206
+set osd_ah_sbar_pos = 313
+#set osd_ah_pos = 78
+set osd_ah_pos = 185
+#set osd_current_pos = 234
+set osd_current_pos = 341
+#set osd_mah_drawn_pos = 234
+set osd_mah_drawn_pos = 341
+#set osd_wh_drawn_pos = 234
+set osd_wh_drawn_pos = 341
+#set osd_motor_diag_pos = 234
+set osd_motor_diag_pos = 341
+#set osd_craft_name_pos = 234
+set osd_craft_name_pos = 341
+#set osd_pilot_name_pos = 234
+set osd_pilot_name_pos = 341
+#set osd_gps_speed_pos = 234
+set osd_gps_speed_pos = 341
+#set osd_gps_lon_pos = 234
+set osd_gps_lon_pos = 341
+#set osd_gps_lat_pos = 234
+set osd_gps_lat_pos = 341
+#set osd_gps_sats_pos = 234
+set osd_gps_sats_pos = 341
+#set osd_home_dir_pos = 234
+set osd_home_dir_pos = 341
+#set osd_home_dist_pos = 234
+set osd_home_dist_pos = 341
+#set osd_flight_dist_pos = 234
+set osd_flight_dist_pos = 341
+#set osd_compass_bar_pos = 234
+set osd_compass_bar_pos = 341
+#set osd_altitude_pos = 234
+set osd_altitude_pos = 341
+#set osd_pid_roll_pos = 234
+set osd_pid_roll_pos = 341
+#set osd_pid_pitch_pos = 234
+set osd_pid_pitch_pos = 341
+#set osd_pid_yaw_pos = 234
+set osd_pid_yaw_pos = 341
+#set osd_debug_pos = 234
+set osd_debug_pos = 341
+#set osd_power_pos = 234
+set osd_power_pos = 341
+#set osd_pidrate_profile_pos = 234
+set osd_pidrate_profile_pos = 341
+#set osd_warnings_pos = 14665
+set osd_warnings_pos = 14772
+#set osd_avg_cell_voltage_pos = 234
+set osd_avg_cell_voltage_pos = 341
+#set osd_pit_ang_pos = 234
+set osd_pit_ang_pos = 341
+#set osd_rol_ang_pos = 234
+set osd_rol_ang_pos = 341
+#set osd_battery_usage_pos = 234
+set osd_battery_usage_pos = 341
+#set osd_disarmed_pos = 234
+set osd_disarmed_pos = 341
+#set osd_nheading_pos = 234
+set osd_nheading_pos = 341
+#set osd_up_down_reference_pos = 205
+set osd_up_down_reference_pos = 312
+#set osd_ready_mode_pos = 234
+set osd_ready_mode_pos = 341
+#set osd_esc_tmp_pos = 234
+set osd_esc_tmp_pos = 341
+#set osd_esc_rpm_pos = 234
+set osd_esc_rpm_pos = 341
+#set osd_esc_rpm_freq_pos = 234
+set osd_esc_rpm_freq_pos = 341
+#set osd_rtc_date_time_pos = 234
+set osd_rtc_date_time_pos = 341
+#set osd_adjustment_range_pos = 234
+set osd_adjustment_range_pos = 341
+#set osd_flip_arrow_pos = 234
+set osd_flip_arrow_pos = 341
+#set osd_core_temp_pos = 234
+set osd_core_temp_pos = 341
+#set osd_log_status_pos = 234
+set osd_log_status_pos = 341
+#set osd_stick_overlay_left_pos = 234
+set osd_stick_overlay_left_pos = 341
+#set osd_stick_overlay_right_pos = 234
+set osd_stick_overlay_right_pos = 341
+#set osd_rate_profile_name_pos = 234
+set osd_rate_profile_name_pos = 341
+#set osd_pid_profile_name_pos = 234
+set osd_pid_profile_name_pos = 341
+#set osd_profile_name_pos = 234
+set osd_profile_name_pos = 341
+#set osd_rcchannels_pos = 234
+set osd_rcchannels_pos = 341
+#set osd_camera_frame_pos = 35
+set osd_camera_frame_pos = 142
+#set osd_efficiency_pos = 234
+set osd_efficiency_pos = 341
+#set osd_total_flights_pos = 234
+set osd_total_flights_pos = 341
+#set osd_aux_pos = 234
+set osd_aux_pos = 341
+#set osd_sys_goggle_voltage_pos = 234
+set osd_sys_goggle_voltage_pos = 341
+#set osd_sys_vtx_voltage_pos = 234
+set osd_sys_vtx_voltage_pos = 341
+#set osd_sys_bitrate_pos = 234
+set osd_sys_bitrate_pos = 341
+#set osd_sys_delay_pos = 234
+set osd_sys_delay_pos = 341
+#set osd_sys_distance_pos = 234
+set osd_sys_distance_pos = 341
+#set osd_sys_lq_pos = 234
+set osd_sys_lq_pos = 341
+#set osd_sys_goggle_dvr_pos = 234
+set osd_sys_goggle_dvr_pos = 341
+#set osd_sys_vtx_dvr_pos = 234
+set osd_sys_vtx_dvr_pos = 341
+#set osd_sys_warnings_pos = 234
+set osd_sys_warnings_pos = 341
+#set osd_sys_vtx_temp_pos = 234
+set osd_sys_vtx_temp_pos = 341
+#set osd_sys_fan_speed_pos = 234
+set osd_sys_fan_speed_pos = 341
+#set osd_displayport_device = AUTO
+set osd_displayport_device = MSP
+#set system_hse_mhz = 0
+set system_hse_mhz = 8
+#set vtx_band = 0
+set vtx_band = 5
+#set vtx_channel = 0
+set vtx_channel = 1
+#set vtx_power = 0
+set vtx_power = 5
+#set vtx_freq = 0
+set vtx_freq = 5658
+#set vcd_video_system = AUTO
+set vcd_video_system = HD
+#set max7456_spi_bus = 0
+set max7456_spi_bus = 2
+#set displayport_msp_fonts = 0,0,0,0
+set displayport_msp_fonts = 0,1,2,3
+#set pinio_box = 255,255,255,255
+set pinio_box = 40,41,255,255
+#set flash_spi_bus = 0
+set flash_spi_bus = 2
+#set gyro_1_bustype = GYROAUTO
+set gyro_1_bustype = SPI
+#set gyro_1_spibus = 0
+set gyro_1_spibus = 1
+#set gyro_1_sensor_align = CW0
+set gyro_1_sensor_align = CW90
+#set gyro_1_align_yaw = 0
+set gyro_1_align_yaw = 900
+#set gyro_2_bustype = SPI
+set gyro_2_bustype = NONE
+#set gyro_2_sensor_align = CW0
+set gyro_2_sensor_align = DEFAULT
+#set expresslrs_uid = 0,0,0,0,0,0
+set expresslrs_uid = 114,177,112,182,44,229
+#set expresslrs_domain = AU433
+set expresslrs_domain = ISM2400
+#set expresslrs_rate_index = 0
+set expresslrs_rate_index = 1
+
+profile 0
+
+# profile 0
+#set horizon_level_strength = 50
+set horizon_level_strength = 75
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+# rateprofile 2
+#set rates_type = ACTUAL
+set rates_type = BETAFLIGHT
+#set roll_rc_rate = 7
+set roll_rc_rate = 110
+#set pitch_rc_rate = 7
+set pitch_rc_rate = 110
+#set yaw_rc_rate = 7
+set yaw_rc_rate = 100
+#set roll_srate = 67
+set roll_srate = 75
+#set pitch_srate = 67
+set pitch_srate = 75
+#set yaw_srate = 67
+set yaw_srate = 70
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save

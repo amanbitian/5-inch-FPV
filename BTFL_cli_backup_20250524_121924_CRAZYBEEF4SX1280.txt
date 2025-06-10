@@ -1,0 +1,109 @@
+# diff all defaults
+
+# version
+# Betaflight / STM32F411 (S411) 4.5.2 Apr  8 2025 / 09:45:08 (024f8e13d) MSP API: 1.46
+# config rev: 2f448eb
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name CRAZYBEEF4SX1280
+manufacturer_id HAMO
+mcu_id 002c00593034511032373331
+signature 
+#feature -RX_SERIAL
+#feature -LED_STRIP
+#feature -OSD
+
+# feature
+feature -RX_SPI
+feature RX_SERIAL
+feature LED_STRIP
+feature OSD
+#feature RX_SPI
+
+# aux
+#aux 0 0 0 900 900 0 0
+aux 0 0 0 1575 2100 0 0
+#aux 1 0 0 900 900 0 0
+aux 1 1 1 900 1300 0 0
+#aux 2 0 0 900 900 0 0
+aux 2 2 1 1300 1700 0 0
+#aux 3 0 0 900 900 0 0
+aux 3 13 2 1625 2100 0 0
+#aux 4 0 0 900 900 0 0
+aux 4 35 3 1300 2100 0 0
+
+# vtxtable
+#vtxtable bands 0
+vtxtable bands 6
+#vtxtable channels 0
+vtxtable channels 8
+#vtxtable band 1 BAND1    1 CUSTOM 
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+#vtxtable band 2 BAND2    2 CUSTOM 
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+#vtxtable band 3 BAND3    3 CUSTOM 
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665    0 5885 5905    0    0
+#vtxtable band 4 BAND4    4 CUSTOM 
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+#vtxtable band 5 BAND5    5 CUSTOM 
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+#vtxtable band 6 BAND6    6 CUSTOM 
+vtxtable band 6 LOWRACE  L CUSTOM  5333 5373 5413 5453 5493 5533 5573 5613
+#vtxtable powerlevels 0
+vtxtable powerlevels 5
+#vtxtable powervalues 0 0 0 0 0 0 0 0
+vtxtable powervalues 10 2 14 20 26
+#vtxtable powerlabels LV0 LV1 LV2 LV3 LV4 LV5 LV6 LV7
+vtxtable powerlabels 0 RCE 25 100 400
+
+# master
+#set acc_calibration = 0,0,0,0
+set acc_calibration = 44,-9,-26,1
+#set dshot_idle_value = 550
+set dshot_idle_value = 1000
+#set gps_ublox_flight_model = AIRBORNE_1G
+set gps_ublox_flight_model = AIRBORNE_4G
+#set pid_process_denom = 1
+set pid_process_denom = 16
+#set vtx_band = 0
+set vtx_band = 5
+#set vtx_channel = 0
+set vtx_channel = 1
+#set vtx_power = 0
+set vtx_power = 5
+#set vtx_freq = 0
+set vtx_freq = 5658
+#set expresslrs_uid = 0,0,0,0,0,0
+set expresslrs_uid = 114,177,112,182,44,229
+#set expresslrs_rate_index = 0
+set expresslrs_rate_index = 1
+
+profile 0
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
